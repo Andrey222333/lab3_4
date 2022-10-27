@@ -32,8 +32,10 @@ $password = "password";
                     echo '<p> Спасибо за вашу жалобу:</p>';
                     echo '<p class="form_div"><textarea readonly disabled rows="10" cols="45">'.$_POST['text'].'</textarea></p>';
                 }
+
+                if (isset($_POST['file']) && $_POST['file'] !=0) echo '<p>Вы приложили файл: '.$_POST['file'].'</p>';
                 
-                echo '<div><a href="feedback.php?FIO='.$_POST['fio'].'&EMAIL='.$_POST['email'].'&TEXT='.$_POST['text'].'"><button class="form_button">Заполнить снова</button></a><div>';
+                echo '<div><a href="feedback.php?FIO='.$_POST['fio'].'&EMAIL='.$_POST['email'].'&TEXT='.$_POST['text'].'&E='.$_POST['answer'].'"><button class="form_button">Заполнить снова</button></a><div>';
 
             } else {
                 if(($_POST['login'] == $login) && ($_POST['password'] == $password)) {

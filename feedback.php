@@ -18,7 +18,7 @@ $pages_list = ["index", "feedback", "login"];
     <?php require('components/header_form.php') ?>
     <main>
         <div class="form_feedback">
-            <form class="form_2" name="test" enctype="multipart/form-data" action="home.php" method="post">
+            <form class="form_2" name="test" action="home.php" method="post">
                 <div class="form_group">
                     <input class="form_input" type="text" id="fio" name="fio" placeholder=" " value=<?php 
                         if(isset($_GET["FIO"])){
@@ -41,9 +41,24 @@ $pages_list = ["index", "feedback", "login"];
                 </div>
                 <div class="form_div">
                     <p class="form_radio padding">Как вы узнали о нас?</p>
-                    <p class="form_radio"><input type="radio" id="r1" name="answer" value="На работе">На работе</p>
-                    <p class="form_radio padding"><input type="radio" id="r2" name="answer" value="От друpей">От друзей</p>
-                    <p class="form_radio"><input type="radio" id="r3" name="answer" value="В объявлении">В объявлении</p>
+                    <p class="form_radio"><input type="radio" id="r1" name="answer" value="На работе"
+                    <?php 
+                        if (isset($_GET['E']) && $_GET['E'] == 'На работе') {
+                            echo 'checked';
+                        }
+                    ?>>На работе</p>
+                    <p class="form_radio padding"><input type="radio" id="r2" name="answer" value="От друpей"
+                    <?php 
+                        if (isset($_GET['E']) && $_GET['E'] == 'От друpей') {
+                            echo 'checked';
+                        }
+                    ?>>От друзей</p>
+                    <p class="form_radio"><input type="radio" id="r3" name="answer" value="В объявлении"
+                    <?php 
+                        if (isset($_GET['E']) && $_GET['E'] == 'В объявлении') {
+                            echo 'checked';
+                        }
+                    ?>>В объявлении</p>
                 </div>
                 <div class="form_div">
                     <select class="form_select" name="select" id="select">
